@@ -5,5 +5,6 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('profile', views.profile, name="profile"),
     path('records', views.records, name="records"),
-    path('financialaid', views.financialaid, name="financialaid")
+    path('financialaid', views.financialaid, name="financialaid"),
+    path('payment', views.payment, name="pyment")
 ]

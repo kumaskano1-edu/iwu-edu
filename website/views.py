@@ -9,3 +9,5 @@ def records(request):
     return render(request, 'records.html')
 def financialaid(request):
     return render(request, 'financialaid.html')
+def payment(request):
+    return render(request, 'payment.html')
