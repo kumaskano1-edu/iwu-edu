@@ -30,7 +30,7 @@ body {
     color:  #006747; /* Optional: lighter color on hover */
 }
 .navbar-brand img {
-    max-height: 50px; /* Adjust as needed */
+    max-height: 2.25rem; /* Adjust as needed */
 }
 .avatar-img {
     width: 80px; /* Small size of the avatar */
