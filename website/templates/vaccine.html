@@ -1,0 +1,221 @@
+{% extends "base/head.html" %}
+
+{% block title %}Student Grades{% endblock %}
+{% load static %}
+<head>
+    <style>
+   body {
+            background-color: #f4f4f9;
+            font-family: Arial, sans-serif;
+        }
+        .card {
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+        .card-header {
+            background-color: #28a745;
+            color: #ffffff;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+        .form-control, .form-control-file {
+            border-radius: 4px;
+        }
+        .btn-success {
+            background-color: #28a745;
+            border-color: #28a745;
+            border-radius: 4px;
+        }
+        .btn-secondary {
+            border-radius: 4px;
+        }
+        .progress {
+            height: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .progress-bar {
+            background-color: #28a745;
+        }
+        footer {
+            margin-top: 30px;
+            padding: 10px 0;
+            background-color: #28a745;
+            color: #ffffff;
+        }
+        .accordion .card-header {
+            background-color: #f4f4f9;
+            border: none;
+        }
+        .accordion .btn-link {
+            color: #28a745;
+        }
+        .alert-info {
+            background-color: #e9f7ef;
+            color: #155724;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            transition: all 0.3s ease;
+        }
+
+    </style>
+</head>
+{% block content %}<div class="container mt-4">
+
+</div>
+<div class="container mt-4">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Vaccination Documentation</li>
+        </ol>
+    </nav>
+</div>
+<div class="container">
+    <div class="row">
+        <!-- Left Side: Profile Info -->
+        <div class="col-lg-4">
+            <!-- Profile Card -->
+            <div class="mb-4">
+                <div class="card profile-card p-2 justify-content-center text-center">
+                    <div class="card-body">
+                        <img src="{% static 'image/profile.jpg' %}" class="profile-img" alt="Profile Photo">
+                        <h5 class="card-title mt-3">Nuraika Kalmatova</h5>
+                        <p class="card-text">ID Number: 900344488</p>
+                        <p class="text-muted mb-4">Status: <span class="badge bg-success">Active</span></p>
+
+                        <p class="card-text"><i class="fas fa-envelope"></i> nkalmato@iwu.edu</p>
+                        <p class="card-text"><i class="fas fa-map-marker-alt"></i> 1207 1/2 N. Main Street, Bloomington, IL 61701</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side: Vaccination Form -->
+        <div class="col-lg-8">
+            <div class="card mb-4">
+                <div class="card-header text-center">
+                    <h2>Vaccination Documentation</h2>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">COVID-19 Vaccination Document</h5>
+                    <p class="card-text">
+                        Please submit your vaccination details below. 
+                        (These instructions can be updated on GUAINFO for Page Name PB.GENVAXSTATUS. 
+                        HTML markup is allowed, so you can link to other pages.)
+                    </p>
+                    <form>
+                        <div class="form-group">
+                            <label for="vaccinationStatus">Select Vaccination Status *</label>
+                            <select class="form-control" id="vaccinationStatus">
+                                <option value="">-- Select Status --</option>
+                                <option value="vaccinated">Vaccinated</option>
+                                <option value="booster">Vaccine Booster</option>
+                                <option value="medicalExemption">Medical Exemption</option>
+                                <option value="religiousExemption">Religious Exemption</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="vaccinationFile">Upload Vaccination Document:</label>
+                            <input type="file" class="form-control-file" id="vaccinationFile">
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-success mt-3"><i class="fas fa-upload"></i> Submit File and Vaccination Status</button>
+                            <button type="reset" class="btn btn-light mt-3"><i class="fas fa-redo"></i> Start Over</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card mb-4">
+    <div class="card-header">
+        <h5><i class="fas fa-question-circle text-white"></i> Frequently Asked Questions</h5>
+    </div>
+    <div class="card-body">
+        <div id="faqAccordion">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Why do I need to submit my vaccination status?
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#faqAccordion">
+                    <div class="card-body">
+                        Submitting your vaccination status helps the institution ensure the safety and well-being of all students and staff on campus.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            What types of documents are accepted?
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqAccordion">
+                    <div class="card-body">
+                        We accept vaccination cards, medical exemption letters, and other official documents as proof of vaccination or exemption.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Can I update my vaccination status later?
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqAccordion">
+                    <div class="card-body">
+                        Yes, you can update your vaccination status by resubmitting the form with the new document.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer -->
+<footer class="text-center">
+    <div class="container">
+        <p>&copy; 2013-2024 Ellucian Company L.P. and its affiliates. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- Success Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="successModalLabel">Submission Successful</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Thank you for submitting your vaccination details. You will receive a confirmation email shortly.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+{% endblock content %}

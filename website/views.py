@@ -11,3 +11,5 @@ def financialaid(request):
     return render(request, 'financialaid.html')
 def payment(request):
     return render(request, 'payment.html')
+def vaccine(request):
+    return render(request, 'vaccine.html')
