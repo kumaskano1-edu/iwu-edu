@@ -7,7 +7,6 @@
         body {
             background-color: #f8f9fa;
         }
-
         .sap-status {
             background-color: #ffffff;
             padding: 20px;
@@ -20,53 +19,131 @@
         }
     </style>
 </head>
+<body>
 
-<div class="container">
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="/">Home</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Student Records</li>
-        </ol>
-      </nav>
-    <!-- Header with Aid Year -->
-    <div class="d-flex justify-content-between align-items-center">
-        <h3>Financial Aid</h3>
-   
+    <div class="container mt-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Financial Aid</li>
+            </ol>
+          </nav>
+        <!-- Header with Aid Year -->
+        <div class="d-flex justify-content-between align-items-center">
+            <h3>Financial Aid</h3>
+           
+        </div>
+        
+        <!-- Navigation Tabs -->
+        <ul class="nav nav-tabs mt-4" id="financialAidTabs">
+    
+            <li class="nav-item">
+                <a class="nav-link active" data-bs-toggle="tab" href="#history">Financial Aid History</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#sap">Satisfactory Academic Progress</a>
+            </li>
+     
+        </ul>
+    
+        <!-- Tab Content -->
+        <div class="tab-content mt-4">
+            <div id="history" class="tab-pane fade show active">
+                <div class="mt-4">
+                    <table class="table table-bordered mt-3">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Year</th>
+                                <th>Fund</th>
+                                <th>Period</th>
+                                <th>Accepted</th>
+                                <th>Paid</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2023 - 2024</td>
+                                <td>IWU Student Alumni Award</td>
+                                <td>08/28/2023 - 12/15/2023</td>
+                                <td>$21,000.00</td>
+                                <td>$21,000.00</td>
+                            </tr>
+                            <tr>
+                                <td>2022 - 2023</td>
+                                <td>IWU Student Alumni Award</td>
+                                <td>01/11/2023 - 05/02/2023</td>
+                                <td>$21,000.00</td>
+                                <td>$21,000.00</td>
+                            </tr>
+                            <tr>
+                                <td>2021 - 2022</td>
+                                <td>IWU Student Alumni Award</td>
+                                <td>08/23/2021 - 12/10/2021</td>
+                                <td>$21,000.00</td>
+                                <td>$21,000.00</td>
+                            </tr>
+                            <tr>
+                                <td>2021 - 2022</td>
+                                <td>IWU Student Alumni Award</td>
+                                <td>01/05/2022 - 04/26/2022</td>
+                                <td>$21,000.00</td>
+                                <td>$21,000.00</td>
+                            </tr>
+                            <tr>
+                                <td>2021 - 2022</td>
+                                <td>IWU Student Loan</td>
+                                <td>08/23/2021 - 12/10/2021</td>
+                                <td>$1,000.00</td>
+                                <td>$1,000.00</td>
+                            </tr>
+                            <tr>
+                                <td>2021 - 2022</td>
+                                <td>IWU Student Loan</td>
+                                <td>01/05/2022 - 04/26/2022</td>
+                                <td>$1,000.00</td>
+                                <td>$1,000.00</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" class="fw-bold text-center">Total</td>
+                                <td class="fw-bold">$86,000.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="sap" class="tab-pane fade">
+                <h5>Satisfactory Academic Progress (SAP)</h5>
+                <table class="table table-bordered mt-3">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Effective Term</th>
+                            <th>SAP Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Fall 2024</td>
+                            <td>Reviewed Making Good Progress</td>
+                        </tr>
+                        <tr>
+                            <td>May Term 2023</td>
+                            <td>Reviewed Making Good Progress</td>
+                        </tr>
+                        <tr>
+                            <td>May Term 2022</td>
+                            <td>Reviewed Making Good Progress</td>
+                        </tr>
+                        <tr>
+                            <td>Fall 2021</td>
+                            <td>Not Yet Reviewed</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+           
+        </div>
     </div>
     
 
-
-    <!-- SAP Status Section -->
-    <div class="sap-status mt-4">
-        <h5>SAP Status</h5>
-        <table class="table table-bordered mt-3">
-            <thead class="table-light">
-                <tr>
-                    <th>Effective Term</th>
-                    <th>SAP Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Fall 2024</td>
-                    <td>Reviewed Making Good Progress</td>
-                </tr>
-                <tr>
-                    <td>May Term 2023</td>
-                    <td>Reviewed Making Good Progress</td>
-                </tr>
-                <tr>
-                    <td>May Term 2022</td>
-                    <td>Reviewed Making Good Progress</td>
-                </tr>
-                <tr>
-                    <td>Fall 2021</td>
-                    <td>Not Yet Reviewed</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</br>
-</div>
 
 {% endblock content%}
