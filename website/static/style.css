@@ -1,0 +1,217 @@
+/* student_portal/static/css/styles.css */
+.top-line {
+    height: 10px; /* Adjust the thickness of the line */
+    background-color: #006747; /* Green color */
+}
+.navbar {
+    background-color: white; /* Custom green background color */
+    border-bottom: 1px solid #d3d3d3; /* Thin black border below the navbar */
+    font-family: 'Besley', serif;
+}
+.navbar .navbar-nav .nav-link {
+    color:  #006747; /* White text color for links */
+}
+.navbar .navbar-brand {
+    color:  #006747; /* White text color for brand */
+}
+.navbar .navbar-nav .nav-link:hover {
+    color:  #006747; /* Optional: lighter color on hover */
+}
+.navbar-brand img {
+    max-height: 50px; /* Adjust as needed */
+}
+.avatar-img {
+    width: 80px; /* Small size of the avatar */
+    height: 80px; /* Small size of the avatar */
+    border-radius: 50%; /* Circular avatar */
+    object-fit: cover; /* Ensure the image covers the circular area */
+}
+
+.d-flex {
+    display: flex;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem;
+}
+
+.mr-3 {
+    margin-right: 1rem;
+}
+
+.btn-primary {
+    background-color: #006747; /* Primary button color */
+    border-color: #006747; /* Border color for button */
+}
+
+.btn-primary:hover {
+    background-color: #004d40; /* Darker green on hover */
+}
+.card-link {
+    text-decoration: none; /* Remove underline from links */
+    color: inherit; /* Inherit color from parent (card) */
+}
+
+
+
+
+
+/* student_portal/static/css/styles.css */
+
+/* Footer styles */
+#footer {
+    background-color: #006747; /* Dark background for footer */
+    color: #fff; /* White text color */
+    padding: 2rem 0; /* Vertical padding */
+}
+
+.footer-social {
+    list-style: none; /* Remove list style */
+    padding: 0; /* Remove padding */
+}
+
+.footer-social .nav-item {
+    margin: 0 0.5rem; /* Space between social icons */
+}
+
+.footer-social .nav-link {
+    color: #fff; /* White color for social links */
+    font-size: 1.5rem; /* Larger icons */
+}
+
+.footer-social .nav-link:hover {
+    color: #ddd; /* Lighter color on hover */
+}
+
+.footer-logo {
+    max-width: 100%; /* Responsive logo size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.footer-nav {
+    margin-top: 1rem; /* Space between social and footer links */
+}
+
+.footer-nav .list-unstyled {
+    padding-left: 0; /* Remove padding from lists */
+}
+
+.footer-nav .list-unstyled li {
+    margin-bottom: 0.5rem; /* Space between items */
+}
+
+.footer-nav a {
+    color: #fff; /* White text color for links */
+    text-decoration: none; /* Remove underline */
+}
+
+.footer-nav a:hover {
+    color: #ddd; /* Lighter color on hover */
+}
+
+.btn-footer {
+    background-color: #006747; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 0.5rem 1rem; /* Button padding */
+    margin-bottom: 0.5rem; /* Space between buttons */
+    display: block; /* Block level buttons */
+    text-align: center; /* Center text */
+}
+
+.btn-footer:hover {
+    background-color: #004d40; /* Darker green on hover */
+}
+
+.copyright {
+    background-color: #006747; /* Slightly different background for copyright section */
+    padding: 1rem 0; /* Vertical padding */
+    text-align: center; /* Center text */
+}
+
+.copyright .list-inline {
+    padding-left: 0; /* Remove padding from list */
+    margin-bottom: 0; /* Remove bottom margin */
+}
+
+.copyright .list-inline-item {
+    display: inline; /* Inline list items */
+    margin: 0 0.5rem; /* Space between items */
+}
+footer a {
+    font-size: 15px;
+}   
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+footer a {
+    color: var(--white);
+    font-weight: 100;
+    font-size: 15px;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    text-decoration: none;
+}
+.unstyled li {
+    margin-bottom: 10px;
+}
+.footer-nav {
+    margin-top: 30px;
+}
+.justify-content-center {
+    justify-content: center !important;
+}
+
+.footer-nav .list-unstyled {
+    border-right: 1px solid white;
+}
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
+
+
+/* profile ======= */
+
+.profile-header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    text-align: right;
+}
+.profile-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+.section-title {
+    font-weight: bold;
+    margin-top: 20px;
+}
+.section-item {
+    margin-bottom: 10px;
+}
+.section-item strong {
+    font-weight: bold;
+}
+.edit-icon {
+    color: #4CAF50;
+    cursor: pointer;
+    float: right;
+}

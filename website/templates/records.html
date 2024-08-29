@@ -1,0 +1,241 @@
+{% extends "base/head.html" %}
+
+{% load static %}
+{% block content %}
+<head>
+    <style>
+        body {
+            background-color: #f5f5f5;
+        }
+        .gpa-summary, .primary-curriculum {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .summary-header {
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .gpa-summary .summary-box, .primary-curriculum .summary-box {
+            margin-bottom: 15px;
+        }
+        .coursework {
+            margin-top: 20px;
+        }
+        table {
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .table th, .table td {
+            vertical-align: middle;
+            text-align: center;
+        }
+        .final-grade {
+            border-radius: 50%;
+            background-color: #f0f0f0;
+            width: 35px;
+            height: 35px;
+            display: inline-block;
+            line-height: 35px;
+            font-weight: bold;
+        }
+        .term-dropdown {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-4">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Student Records</li>
+        </ol>
+      </nav>
+      <div class="progress-tracking">
+        <div class="summary-header">Degree Progress</div>
+        <div class="summary-box">
+            <p><strong>Credits Completed:</strong> 85/120 (70%)</p>
+            <p><strong>Required Credits:</strong> 120</p>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
+            </div>
+        </div>
+    </div>
+    <div class="upcoming-deadlines">
+        <div class="summary-header">Upcoming Deadlines</div>
+        <ul class="list-group">
+            <li class="list-group-item">Course Registration: Sept 15, 2024</li>
+            <li class="list-group-item">Midterm Exams: Oct 20-25, 2024</li>
+            <li class="list-group-item">Final Exams: Dec 15-20, 2024</li>
+        </ul>
+    </div>
+</br>    
+    <!-- Term Dropdown -->
+    <div class="row">
+        <div class="col-12 term-dropdown">
+            <label for="termSelect" class="form-label">Select Term</label>
+            <select id="termSelect" class="form-select" onchange="filterTable()">
+                <option value="Spring 2024" selected>Spring 2024</option>
+                <option value="Summer 2024">Summer 2024</option>
+                <option value="Fall 2024">Fall 2024</option>
+            </select>
+        </div>
+    </div>
+    <!-- GPA Summary and Primary Curriculum -->
+    <div class="row">
+        <!-- GPA Summary -->
+        <div class="col-md-4">
+            <div class="gpa-summary">
+                <div class="summary-box">
+                    <p><strong>Selected Term:</strong> 3.82</p>
+                    <p><strong>Institutional:</strong> 3.88</p>
+                    <p><strong>Transfer:</strong> 0.00</p>
+                    <p><strong>Overall:</strong> 3.88</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Primary Curriculum -->
+        <div class="col-md-8">
+            <div class="primary-curriculum">
+                <div class="summary-header">Primary Curriculum <a href="https://www.iwu.edu/business-economics/academics/finance-requirements.html">View Details</a></div>
+                <div class="summary-box">
+                    <p><strong>Level:</strong> Undergraduate</p>
+                    <p><strong>College:</strong> College of Liberal Arts</p>
+                    <p><strong>Degree:</strong> Bachelor of Arts</p>
+                    <p><strong>Program:</strong> BA for Liberal Arts</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Course Work Table -->
+    <div class="row coursework">
+        <div class="col-12">
+            <table class="table table-bordered table-hover">
+                <thead class="table-light">
+                    <tr>
+                        <th>Subject</th>
+                        <th>Course Title</th>
+                        <th>Campus</th>
+                        <th>Midterm Grade</th>
+                        <th>Final Grade</th>
+                        <th>Narrative Grade Comments</th>
+                        <th>Attempted Hours</th>
+                        <th>Earned Hours</th>
+                        <th>GPA Hours</th>
+                        <th>Quality Points</th>
+                        <th>CRN</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="courseworkTable">
+                    <!-- Spring 2024 Coursework -->
+                    <tr data-term="Spring 2024">
+                        <td>PEC 129X, 1</td>
+                        <td>Personal Fitness I</td>
+                        <td>B</td>
+                        <td>B</td>
+                        <td><span class="final-grade">W</span></td>
+                        <td></td>
+                        <td>0.000</td>
+                        <td>0.000</td>
+                        <td>0.000</td>
+                        <td>0.00</td>
+                        <td><a href="#">24766</a></td>
+                        <td></td>
+                    </tr>
+                    <tr data-term="Spring 2024">
+                        <td>PEC 121Y, 1</td>
+                        <td>Pilates</td>
+                        <td>B</td>
+                        <td>B</td>
+                        <td><span class="final-grade">CR</span></td>
+                        <td></td>
+                        <td>0.000</td>
+                        <td>0.000</td>
+                        <td>0.000</td>
+                        <td>0.00</td>
+                        <td><a href="#">26014</a></td>
+                        <td></td>
+                    </tr>
+
+                    <!-- Summer 2024 Coursework -->
+                    <tr data-term="Summer 2024" style="display: none;">
+                        <td>PSCI 301, 1</td>
+                        <td>Studies-Political Culture</td>
+                        <td>B</td>
+                        <td>A</td>
+                        <td><span class="final-grade">A</span></td>
+                        <td></td>
+                        <td>1.000</td>
+                        <td>1.000</td>
+                        <td>1.000</td>
+                        <td>4.00</td>
+                        <td><a href="#">26445</a></td>
+                        <td></td>
+                    </tr>
+                    <tr data-term="Summer 2024" style="display: none;">
+                        <td>LC 232, 1</td>
+                        <td>Resisting Dictatorship-Spain</td>
+                        <td>B</td>
+                        <td>A</td>
+                        <td><span class="final-grade">A</span></td>
+                        <td></td>
+                        <td>1.000</td>
+                        <td>1.000</td>
+                        <td>1.000</td>
+                        <td>4.00</td>
+                        <td><a href="#">26545</a></td>
+                        <td></td>
+                    </tr>
+
+                    <!-- Fall 2024 Coursework -->
+                    <tr data-term="Fall 2024" style="display: none;">
+                        <td>PSCI 304, 1</td>
+                        <td>Transitional Justice</td>
+                        <td>B</td>
+                        <td>A</td>
+                        <td><span class="final-grade">B+</span></td>
+                        <td></td>
+                        <td>1.000</td>
+                        <td>1.000</td>
+                        <td>1.000</td>
+                        <td>3.30</td>
+                        <td><a href="#">26441</a></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript for filtering coursework by term -->
+<script>
+    function filterTable() {
+        var selectedTerm = document.getElementById("termSelect").value;
+        var tableRows = document.querySelectorAll("#courseworkTable tr");
+        
+        tableRows.forEach(function(row) {
+            if (row.getAttribute("data-term") === selectedTerm) {
+                row.style.display = "";
+            } else {
+                row.style.display = "none";
+            }
+        });
+    }
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+
+
+{% endblock content%}

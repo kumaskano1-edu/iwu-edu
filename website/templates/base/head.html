@@ -1,0 +1,120 @@
+<!-- grades/templates/grades/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Illinois Wesleyan University | Private Liberal Arts College in Bloomington, Illinois</title>    <!-- Bootstrap CSS -->
+    <link rel="icon" href="https://www.iwu.edu/_resources/images/favicons/favicon.ico" sizes="32x32 48x48" type="image/x-icon">
+    <link rel="icon" type="image/png" href="https://www.iwu.edu/_resources/images/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://www.iwu.edu/_resources/images/favicons/favicon-128x128.png" sizes="128x128">
+    <link rel="icon" type="image/png" href="https://www.iwu.edu/_resources/images/favicons/favicon-180x180.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="https://www.iwu.edu/_resources/images/favicons/favicon-192x192.png" sizes="192x192">
+    <link href="{% static 'style.css' %}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3f548dc0bc.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="top-line"></div>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="https://www.iwu.edu/">
+                <img src="{% static 'image/logo.png' %}" alt="Student Portal Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Content -->
+    <div class="container mt-4">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+<!-- Footer -->
+<footer id="footer">
+    <div class="container">
+    </br>
+       <div class="row">
+        <div class="col-12">
+    
+         </div>
+          <div class="col-lg-2"><img src="{% static 'image/footer.png' %}" class="footer-logo" alt="IWU" role="img"></div>
+          <div class="col-lg-10">
+             <div class="row footer-nav justify-content-center">
+                <div class="col-6 col-md-2 order-2 order-md-1">
+                   <ul class="list-unstyled">
+                      <li><a>1312 Park Street</a></li>
+                      <li><a>Bloomington, IL 61701</a></li>
+                      <li><a>United States</a></li>
+                      <li><a>(424) 395 5666</a></li>
+                   </ul>
+                </div>
+                <div class="col-6 col-md-2 order-3 order-md-2">
+                   <ul class="list-unstyled">
+                      <li><a href="https://www.iwu.edu/academics/calendar.html">Academic Calendar</a></li>
+                      <li><a href="https://www.bkstr.com/iwustore/home">Bookstore</a></li>
+                      <li><a href="https://www.iwu.edu/directory/">Directory</a></li>
+                      <li><a href="https://www.iwu.edu/majors/">Majors & Programs</a></li>
+                   </ul>
+                </div>
+                <div class="col-6 col-md-2 order-4 order-md-3">
+                   <ul class="list-unstyled">
+                      <li><a href="https://www.iwu.edu/directory/departments.html">Departments</a></li>
+                      <li><a href="https://www.iwu.edu/human-resources/">Employment</a></li>
+                      <li><a href="https://www.iwu.edu/financial-aid/">Financial Aid</a></li>
+                      <li><a href="https://www.iwu.edu/library/">Library</a></li>
+                   </ul>
+                </div>
+                <div class="col-6 col-md-2 order-5 order-md-4">
+                   <ul class="list-unstyled">
+                      <li><a href="https://www.iwu.edu/about/privacy-policy.html">Privacy Policy</a></li>
+                      <li><a href="https://www.iwu.edu/about/non-discrimination.html">Non-Discrimination</a></li>
+                      <li><a href="https://www.iwu.edu/about/accreditation-statement.html">Accreditation</a></li>
+                      <li><a href="https://www.iwu.edu/about/disclaimer.html">Disclaimer of Content</a></li>
+                   </ul>
+                </div>
+                <div class="col-6 col-md-2 order-5 order-md-4">
+                    <ul class="list-unstyled">
+                       <li><a href="https://www.iwu.edu/about/privacy-policy.html">Privacy Policy</a></li>
+                       <li><a href="https://www.iwu.edu/about/non-discrimination.html">Non-Discrimination</a></li>
+                       <li><a href="https://www.iwu.edu/about/accreditation-statement.html">Accreditation</a></li>
+                       <li><a href="https://www.iwu.edu/about/disclaimer.html">Disclaimer of Content</a></li>
+                    </ul>
+                 </div>
+             </div>
+          </div>
+       </div>
+    </div>
+    <div class="copyright">
+       <div class="container">
+          <div class="row">
+             <div class="col-12">
+                <ul class="list-inline">
+                   <li class="list-inline-item"><a id="directedit" rel="nofollow" href="https://a.cms.omniupdate.com/11/?skin=oucampus&amp;account=Illinois_Wesleyan_University&amp;site=Production&amp;action=de&amp;path=/index.pcf">©</a> Copyright 2023. All Rights Reserved</li>
+                </ul>
+             </div>
+          </div>
+       </div>
+    </div>
+ </footer>
+ 
+</html>
