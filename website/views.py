@@ -49,7 +49,7 @@ def login(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
-        if username != "nkalmato@iwu.edu" or password != "Nuraika2104":
+        if username != "nkalmato@iwu.edu" or password != "Nuku141273":
             # Redirect with an error message as a query parameter
             messages.error(request, "Invalid username or password")
             return render(request, 'login.html')
