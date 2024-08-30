@@ -1,0 +1,141 @@
+{% extends "base/unauthorizedghead.html" %}
+
+{% load static %}
+{% block content %}
+<head>
+ <style>
+    body * {
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+    }
+    .additional-links {
+            margin-top: 1px;
+            text-align: start;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .additional-links a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .additional-links a:hover {
+            text-decoration: underline;
+        }
+ </style>
+</head>
+<section class="py-3 py-md-5 " style="background-color: #006747;">
+    <div class="container">
+      <div class="row gy-4 align-items-center">
+        <div class="col-12 col-md-6 col-xl-7">
+          <div class="d-flex justify-content-center" style="color: white;">
+            <div class="col-12 col-xl-9">
+              <img class="img-fluid rounded mb-4" loading="lazy" src="{% static 'image/logo_IW_monogram.svg' %}" width="109" height="80" alt="BootstrapBrain Logo">
+              <hr class="border-primary-subtle mb-4">
+              <h2 class="h1 mb-4">IWU Student Portal            </h2>
+              <p class="lead mb-5">When colleges are stacked up based on what they do for the world, Illinois Wesleyan University is #5 in the nation among four-year baccalaureate institutions – a Washington Monthly ranking that looks at contribution to the public good.</p>
+              <div class="text-endx">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-grip-horizontal" viewBox="0 0 16 16">
+                  <path d="M2 8a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm3 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm3 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm3 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm3 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-xl-5">
+          <div class="card border-0 rounded-4">
+            <div class="card-body p-3 p-md-4 p-xl-5">
+              <div class="row">
+                <div class="col-12">
+                  <div class="mb-4">
+                    <h3>Sign in</h3>
+                    <p>Prospective Student? <a href="https://www.iwu.edu/admissions/">Apply here!</a></p>
+                  </div>
+                </div>
+              </div>
+              <form action="/login" method="POST">
+                {% csrf_token %}
+                <div class="row gy-3 overflow-hidden">
+                  <div class="col-12">
+                    <div class="form-floating mb-3">
+                      <input type="email" class="form-control" name="username" id="email" placeholder="name@example.com" required="">
+                      <label for="email" class="form-label">Email</label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-floating mb-3">
+                      <input type="password" class="form-control" name="password" id="password" value="" placeholder="Password" required="">
+                      <label for="password" class="form-label">Password</label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-check">
+                    {% if messages %}
+                        <div class="error-message">
+                            {% for message in messages %}
+                                <p>{{ message }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="d-grid">
+                      <button class="btn btn-lg" style="background-color: #006747; color: white" type="submit">Log in now</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+           
+              <div class="row">
+                <div class="col-12">
+                </br>
+                  <div class="additional-links">
+                    <p><a href="https://www.iwu.edu/admissions/">Prospective Students</a></p>
+                    <p><a href="https://www.iwu.edu/student-affairs/">Current Students</a></p>
+                    <p><a href="https://www.iwu.edu/alumni/">Alumni & Friends</a></p>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- <div class="login-container">
+    <h2 class="login-title">IWU Student Portal</h2>
+    {% if messages %}
+        <div class="error-message">
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        </div>
+        <button type="submit" class="login-button">Login</button>
+    </form>
+
+    <div class="additional-links">
+        <p><a href="https://www.iwu.edu/admissions/">Prospective Students</a></p>
+        <p><a href="https://www.iwu.edu/student-affairs/">Current Students</a></p>
+        <p><a href="https://www.iwu.edu/alumni/">Alumni & Friends</a></p>
+    </div>
+
+    <div class="footer-links">
+        <p><a href="https://www.iwu.edu/about/">About IWU</a> | <a href="https://www.iwu.edu/contact/">Contact Us</a></p>
+        <p><a href="https://www.iwu.edu/privacy/">Privacy Policy</a> | <a href="https://www.iwu.edu/accessibility/">Accessibility</a></p>
+    </div>
+</div> -->
+
+{% endblock %}

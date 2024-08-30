@@ -51,8 +51,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',  # Add this
-]
 
+
+]
 ROOT_URLCONF = 'student_portal.urls'
 
 TEMPLATES = [
