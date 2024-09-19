@@ -49,7 +49,7 @@ def login(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
-        if username != "nkalmato@iwu.edu" or password != "Nuku141273":
+        if username != "nkalmato@iwu.edu" or password != "Nuku141274":
             # Redirect with an error message as a query parameter
             messages.error(request, "Invalid username or password")
             return render(request, 'login.html')
@@ -64,6 +64,16 @@ def login(request):
             return response
     else: 
         return render(request, 'login.html')
+def credentials(request):
+    username = request.COOKIES.get('key')
+    password = request.COOKIES.get('password')
+    if username == "nkalmato@iwu.edu" or password != "Nuku141274":
+        messages.error(request, "Invalid username or password")
+        return render(request, 'login.html')
+    else:
+        response = HttpResponse('Your are logged in')
+
+
 def logout(request): 
     response = HttpResponse("Cookie has been deleted.")
     response.delete_cookie('username')
