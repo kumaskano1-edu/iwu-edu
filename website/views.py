@@ -38,6 +38,13 @@ def payment(request):
     else:
         # Handle the case where the cookie does not exist
         return redirect('/login', message="wrong credentials")
+def graduation(request):
+    username = request.COOKIES.get('username', None)
+    if username:
+        return render(request, 'graduation.html')
+    else:
+        # Handle the case where the cookie does not exist
+        return redirect('/login', message="wrong credentials")
 def vaccine(request):
     username = request.COOKIES.get('username', None)
     if username:
